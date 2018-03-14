@@ -46,6 +46,15 @@ public abstract class WObject {
         return y;
     }
 
+    public void reset() {
+        dx = dy = 0;
+    }
+
+    public void setPosition(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
     public boolean hit(WObject wObj) {
         return x == wObj.x && y == wObj.y;
     }

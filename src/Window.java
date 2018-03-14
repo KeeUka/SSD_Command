@@ -29,10 +29,6 @@ public class Window extends JFrame implements Observer {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    public void start() {
-        world.start();
-    }
-
     @Override
     public void update(Observable o, Object arg) {
         renderer.repaint();
@@ -105,7 +101,7 @@ public class Window extends JFrame implements Observer {
             startButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    start();
+                    world.start();
                     startButton.setEnabled(false);
                     Window.this.requestFocus();
                 }

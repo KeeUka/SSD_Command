@@ -26,6 +26,9 @@ public class World extends Observable {
     }
 
     public void start() {
+        player.reset();
+        player.setPosition(size/2, size/2);
+        tick = 0;
         notOver = true;
         thread = new Thread() {
             @Override
