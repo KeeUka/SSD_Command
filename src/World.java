@@ -63,6 +63,22 @@ public class World extends Observable {
         return player;
     }
 
+    public void turnPlayerNorth() {
+        player.turnNorth();
+    }
+
+    public void turnPlayerSouth() {
+        player.turnSouth();
+    }
+
+    public void turnPlayerWest() {
+        player.turnWest();
+    }
+
+    public void turnPlayerEast() {
+        player.turnEast();
+    }
+
     public Enemy[] getEnemies() {
         return enemies;
     }

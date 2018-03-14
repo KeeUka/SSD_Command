@@ -137,13 +137,13 @@ public class Window extends JFrame implements Observer {
         @Override
         public void keyPressed(KeyEvent e) {
             if(e.getKeyCode() == KeyEvent.VK_UP) {
-                world.getPlayer().turnNorth();
+                world.turnPlayerNorth();
             } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-                world.getPlayer().turnSouth();
+                world.turnPlayerSouth();
             } else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-                world.getPlayer().turnWest();
+                world.turnPlayerWest();
             } else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-                world.getPlayer().turnEast();
+                world.turnPlayerEast();
             }
         }
     }
