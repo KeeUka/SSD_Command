@@ -6,11 +6,12 @@ public abstract class WObject {
     private int dx;
     private int dy;
 
+    public WObject() {
+    }
+
     public WObject(int x, int y) {
         this.x = x;
         this.y = y;
-
-        this.dx = this.dy = 0;
     }
 
     public void turnNorth() {

@@ -17,7 +17,7 @@ public class World extends Observable {
     public World(int size) {
         this.size = size;
         tick = 0;
-        player = new Player(size/ 2, size/2);
+        player = new Player();
         enemies = new Enemy[enemyCount];
         Random random = new Random();
         for(int i = 0; i < enemies.length; i++) {
