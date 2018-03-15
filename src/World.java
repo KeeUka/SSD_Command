@@ -9,7 +9,7 @@ public class World extends Observable {
     private Player player;
     private Thread thread;
     private boolean notOver;
-    private long delayed = 300;
+    private long delayed = 500;
     private int enemyCount = 10;
 
     private Enemy [] enemies;
@@ -36,22 +36,30 @@ public class World extends Observable {
                 while(notOver) {
                     tick++;
                     player.move();
-                    for(Enemy e : enemies) {
-                        if(e.hit(player)) {
-                            notOver = false;
-                        }
-                    }
+                    checkCollisions();
                     setChanged();
                     notifyObservers();
-                    try {
-                        Thread.sleep(delayed);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    waitFor(delayed);
                 }
             }
         };
         thread.start();
+    }
+
+    private void checkCollisions() {
+        for(Enemy e : enemies) {
+            if(e.hit(player)) {
+                notOver = false;
+            }
+        }
+    }
+
+    private void waitFor(long delayed) {
+        try {
+            Thread.sleep(delayed);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public int getTick() {
